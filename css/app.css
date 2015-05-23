@@ -121,6 +121,8 @@ body {
 
 .start-container {
   margin-bottom: 20px; }
+  .start-container.existing-cart {
+    display: none; }
 
 .step-indicator {
   width: 100%;
