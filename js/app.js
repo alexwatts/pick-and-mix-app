@@ -155,6 +155,8 @@ function removeProductFromCart(e, removeIndex) {
     console.log('remove index ' + removeIndex);
     cart.splice(removeIndex - 1, 1);
     rebuildSummaryItems();
+
+    fireEventChanges();
 };
 
 function rebuildSummaryItems() {
