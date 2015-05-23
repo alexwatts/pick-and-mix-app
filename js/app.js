@@ -259,3 +259,7 @@ function areWeAtThree() {
 function areWeAtSix() {
     return cart.length == 6;
 };
+
+function bollox() {
+  $(window).scrollTo($('progress-box'), 300, { axis:'y' });
+}
