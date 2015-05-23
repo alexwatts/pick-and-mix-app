@@ -197,6 +197,7 @@ function removeProductFromCart(e, removeIndex) {
     e.preventDefault();
 
     cart.splice(removeIndex - 1, 1);
+    Cookies.set('pick-mix-cart', cart, {expires: 365});
     rebuildSummaryItems();
 
     fireEventChanges();
