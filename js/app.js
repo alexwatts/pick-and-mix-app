@@ -116,7 +116,9 @@ $(function(){
 var cart = new Array() // namespace for the card
 
 //Cart API
-function addProductToCart(productId) {
+function addProductToCart(e, productId) {
+
+    e.preventDefault();
 
     //find the product div
     var productDiv = $('div[data-product-id=' + productId + ']');
@@ -147,7 +149,7 @@ function rebuildSummaryItems() {
 
     //clear items from summary
     for (i=1; i < 7; i++) {
-        updateSummaryWithImage()
+        updateSummaryWithImage('', i);
     }
 
     //from 1 to cart length
@@ -161,7 +163,12 @@ function updateSummaryWithImage(imageSrc, imageId) {
     var summaryDiv =  $('.item-' + imageId);
     summaryDiv.addClass('selected');
     var summaryItemImg = summaryDiv.find('.summary-item-img');
-    summaryItemImg.html("<img onclick='' src='" + imageSrc + "'>");
+    if (imageSrc == '') {
+        summaryDiv.empty();
+    } else {
+        summaryItemImg.html("<img onclick='' src='" + imageSrc + "'>");
+    }
+
 }
 
 function updateProgressIndicators() {
