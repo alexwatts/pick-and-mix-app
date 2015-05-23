@@ -163,7 +163,7 @@ function addProductToCart(e, productId) {
 
     }
 
-    //scrollToTop();
+    scrollToTop();
 
 
 };
