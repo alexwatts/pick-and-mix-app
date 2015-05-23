@@ -196,6 +196,11 @@ function updateSummaryWithImage(imageSrc, imageId) {
 
 };
 
+function updateProgressIndicatorsAndPrice() {
+    updateProgressIndicators();
+    updatePrice();
+};
+
 function updateProgressIndicators() {
     if (areWeAtThree()) {
         //active 3 status
@@ -209,10 +214,25 @@ function updateProgressIndicators() {
     } else {
         $('.summary-progress-6').removeClass('complete');
     }
-};
+}
+
+function updatePrice() {
+    $('.set-price').html('Price: &pound;' + getPrice());
+}
+
+function getPrice() {
+
+    if (cart.length < 3) {
+        return 0;
+    } else if (cart.length < 6) {
+        return 23;
+    } else {
+        return 40;
+    }
+}
 
 function fireEventChanges() {
-    updateProgressIndicators();
+    updateProgressIndicatorsAndPrice();
 };
 
 function getNextImageId() {
