@@ -127,12 +127,13 @@ function addProductToCart(productId) {
     if (!isCartFull()) {
 
         var summaryDiv =  $('.item-' + getNextImageId());
+        summaryDiv.addClass('selected');
         var summaryItemImg = summaryDiv.find('.summary-item-img');
         summaryItemImg.html("<img onclick='' src='" + productImage.attr('src') + "'>");
 
     } else {
 
-        //Load modal
+        $('#modalError').modal();
 
     }
 
@@ -143,6 +144,16 @@ function addProductToCart(productId) {
 
 
 };
+
+function updateProgressIndicators() {
+    if (areWeAtThree()) {
+        //active 3 status
+        $('summary-progress-container-1').addClass('complete');
+    }
+    if (areWeAtSix()) {
+        //activate 6 status
+    }
+}
 
 function getNextImageId() {
     return getNumberOfItemsInCart() + 1;
@@ -158,4 +169,12 @@ function isCartEmpty() {
 
 function getNumberOfItemsInCart() {
     return cart.length;
+}
+
+function areWeAtThree() {
+    return cart.length = 3;
+}
+
+function areWeAtSix() {
+    return cart.length = 6;
 }
