@@ -163,6 +163,8 @@ function addProductToCart(e, productId) {
 
     }
 
+    //scrollToTop();
+
 
 };
 
@@ -406,6 +408,6 @@ function areWeAtSix() {
     return cart.length == 6;
 };
 
-function bollox() {
+function scrollToTop() {
   $(window).scrollTo($('#step-indicator-bar'), 300, { axis:'y' });
 }
