@@ -128,7 +128,16 @@ function addProductToCart(e, productId) {
     //extract the image
     if (!isCartFull()) {
 
+        //Update the summary dom
         updateSummaryWithImage(productImage.attr('src'),  getNextImageId());
+
+        //add the product to the card
+        cart.push({
+            "productId": productId,
+            "src": productImage.attr('src')
+        });
+
+        fireEventChanges();
 
     } else {
 
@@ -136,40 +145,47 @@ function addProductToCart(e, productId) {
 
     }
 
-    //add the image to the carousel dom elemetn
 
-    //add the product to the card
-    cart.push(productId);
+};
 
-    fireEventChanges();
+function removeProductFromCart(e, removeIndex) {
 
+    e.preventDefault();
+
+    console.log('remove index ' + removeIndex);
+    cart.splice(removeIndex - 1, 1);
+    rebuildSummaryItems();
 };
 
 function rebuildSummaryItems() {
 
     //clear items from summary
     for (i=1; i < 7; i++) {
+        console.log('clearing item ' + i);
         updateSummaryWithImage('', i);
     }
 
     //from 1 to cart length
-        //add  item to summary
+    for (i=1; i <= cart.length; i++) {
+        console.log('adding item ' + i);
+        updateSummaryWithImage(cart[i -1].src, i);
+    }
 
-}
+};
 
 function updateSummaryWithImage(imageSrc, imageId) {
-
 
     var summaryDiv =  $('.item-' + imageId);
     summaryDiv.addClass('selected');
     var summaryItemImg = summaryDiv.find('.summary-item-img');
     if (imageSrc == '') {
-        summaryDiv.empty();
+        summaryDiv.find('.summary-item-img').empty();
+        summaryDiv.removeClass('selected');
     } else {
-        summaryItemImg.html("<img onclick='' src='" + imageSrc + "'>");
+        summaryItemImg.html("<img onclick='removeProductFromCart(event," + imageId + ")' src='" + imageSrc + "'>");
     }
 
-}
+};
 
 function updateProgressIndicators() {
     if (areWeAtThree()) {
@@ -180,32 +196,33 @@ function updateProgressIndicators() {
         //activate 6 status
         $('.summary-progress-6').addClass('complete');
     }
-}
+};
 
 function fireEventChanges() {
     updateProgressIndicators();
-}
+};
 
 function getNextImageId() {
     return getNumberOfItemsInCart() + 1;
-}
+};
 
 function isCartFull() {
     return cart.length > 5;
-}
+};
 
 function isCartEmpty() {
-    return cart.lengh - 0;
-}
+    return cart.length - 0;
+};
 
 function getNumberOfItemsInCart() {
+    console.log('number of items in cart' + cart.length);
     return cart.length;
-}
+};
 
 function areWeAtThree() {
     return cart.length == 3;
-}
+};
 
 function areWeAtSix() {
     return cart.length == 6;
-}
+};
