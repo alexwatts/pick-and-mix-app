@@ -407,5 +407,5 @@ function areWeAtSix() {
 };
 
 function bollox() {
-  $(window).scrollTo($('progress-box'), 300, { axis:'y' });
+  $(window).scrollTo($('#step-indicator-bar'), 300, { axis:'y' });
 }

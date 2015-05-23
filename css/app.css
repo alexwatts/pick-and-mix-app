@@ -186,7 +186,7 @@ body {
   -webkit-background-size: 20px 20px;
   background-size: 20px 20px; }
   .partner-item .product-img {
-    min-height: 0;
+    min-height: 100px;
     background: none; }
   .product-img img {
     width: 100%;
