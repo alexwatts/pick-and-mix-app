@@ -16,7 +16,6 @@ $(function(){
     $(window).load(function() {
         $("#loader").fadeOut();
         $("#overlay").delay(800).fadeOut("slow");
-        // console.log( "window loaded" );          
     });
 
 
@@ -118,6 +117,16 @@ $(function(){
       })
     });
 
+    if (Cookies.get('pick-mix-cart') !== undefined) {
+        cart = Cookies.get('pick-mix-cart');
+        $('.existing-cart').show();
+        $('.no-cart').hide();
+    } else {
+        $('.no-cart').show();
+        $('.existing-cart').hide();
+
+    }
+
 });
 
 var selectedBag = "";
@@ -155,6 +164,8 @@ function addProductToCart(e, productId) {
             "title": productTitle[0].innerText
         });
 
+        Cookies.set('pick-mix-cart', cart);
+
         fireEventChanges();
 
     } else {
@@ -172,7 +183,6 @@ function removeProductFromCart(e, removeIndex) {
 
     e.preventDefault();
 
-    console.log('remove index ' + removeIndex);
     cart.splice(removeIndex - 1, 1);
     rebuildSummaryItems();
 
@@ -228,17 +238,19 @@ function handleContinue(e) {
 
 }
 
+function clearCart() {
+    cart = new Array();
+}
+
 function rebuildSummaryItems() {
 
     //clear items from summary
     for (i=1; i < 7; i++) {
-        console.log('clearing item ' + i);
         updateSummaryWithImage('', i);
     }
 
     //from 1 to cart length
     for (i=1; i <= cart.length; i++) {
-        console.log('adding item ' + i);
         updateSummaryWithImage(cart[i -1].src, i);
     }
 
