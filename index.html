@@ -40,7 +40,7 @@
 
       <!-- Tab panes -->
       <div class="tab-content">
-        <div role="tabpanel" class="tab-pane active" id="home">
+        <div role="tabpanel" class="tab-pane fade in active" id="home">
 
           <div class="container">
 
@@ -48,7 +48,7 @@
               <h2 class="intro">Create your unique travel bag.</h2>
               <div class="start-container">
                   <div class="continue-container">
-                      <a href="pick.html" class="btn btn-secondary btn-lg center-block">Continue</a>
+                      <a href="#pick" data-toggle="tab" class="btn btn-secondary btn-lg center-block">Continue</a>
                       <span>or</span>
                   </div>
                   <a href="#" data-toggle="modal" data-target="#modalContinue" class="btn btn-primary btn-lg center-block">Start</a>
@@ -63,7 +63,7 @@
 
         </div><!-- /#home -->
 
-        <div role="tabpanel" class="tab-pane" id="pick">
+        <div role="tabpanel" class="tab-pane fade" id="pick">
 
           <div class="container pick">
 
@@ -116,7 +116,7 @@
 
                   <div class="price-container clearfix">
                       <div class="price">Price: &pound;0</div>
-                      <div class="continue"><a href="pack.html" class="btn btn-primary">Continue</a></div>
+                      <div class="continue"><a href="#pack" data-toggle="tab" class="btn btn-primary">Continue</a></div>
                   </div>
 
               </div><!-- /.progress-box -->
@@ -928,7 +928,7 @@
 
         </div><!-- /#pick -->
 
-        <div role="tabpanel" class="tab-pane" id="pack">
+        <div role="tabpanel" class="tab-pane fade" id="pack">
 
           <div class="container pick">
 
@@ -944,7 +944,7 @@
                   <div class="selection-container">
                       <div class="selection-title clearfix">
                           <span>Your Selection</span>
-                          <a href="pick.html">Edit</a>
+                          <a href="#pick" data-toggle="tab">Edit</a>
                       </div>
                       <div class="selected-item-list clearfix">
                           <div class="selected-item">
@@ -1092,7 +1092,7 @@
           </div>
           <div class="modal-footer">
             <a href="#" class="btn btn-default" data-dismiss="modal">No, go back</a>
-            <a href="pick.html" class="btn btn-primary">Yes, start again</a>
+            <a href="#pick" data-toggle="tab" data-dismiss="modal" class="btn btn-primary">Yes, start again</a>
           </div>
         </div>
       </div>

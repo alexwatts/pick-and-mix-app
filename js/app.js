@@ -22,6 +22,13 @@ $(function(){
 
     //!! start of app scripts !!//
 
+    // tabs fix remove when hidden
+
+    $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
+        var target = this.href.split('#');
+        $('.nav a').filter('[href="#'+target[1]+'"]').tab('show');
+    })
+
     // add bag radio button
 
     $(".partner-item a").click(function(event){
