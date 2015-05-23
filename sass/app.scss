@@ -142,13 +142,23 @@ body {
 	white-space: normal;
 	position: relative;
 
-	width: 70%; // temporary
+	// width: 70%; // temporary
 
 	width: 200px; // temporary
 
 }
 
 .product-img {
+
+	min-height: 200px;
+	background: url(../images/loading-spinner@2x.gif) no-repeat center center;
+	background-size: 20px 20px;
+	// loading-spinner@2x.gif
+
+	.partner-item & {
+		min-height: 0;
+		background: none;
+	}
 
 	img {
 		width: 100%;
