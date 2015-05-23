@@ -214,7 +214,10 @@ function handleContinue(e) {
 
     e.preventDefault();
 
-    var products = new Array();
+    var dataToSend = {
+        products: []
+    };
+
     var distinctProductCodes = new Array();
     var productMap = {};
 
@@ -228,24 +231,33 @@ function handleContinue(e) {
     }
 
     for (i = 0; i<distinctProductCodes.length; i++) {
-        products.push({
+        dataToSend.products[i] = {
             product: {
                 id: distinctProductCodes[i],
                 quantity: productMap[distinctProductCodes[i]]
             }
-        })
+        }
     }
 
     if (selectedBag != "") {
-        products.push({
+        dataToSend.products[distinctProductCodes.length] = {
             product: {
                 id: selectedBag,
                 quantity: 1
             }
-        })
+        }
     }
 
-    alert(JSON.stringify(products));
+
+    $.ajax({
+        type: "POST",
+        url: 'http://localhost:8000/deal',
+        data: JSON.stringify(dataToSend),
+        dataType: 'json',
+        contentType: 'application/json;charset=UTF-8'
+    });
+
+    //alert(JSON.stringify(products));
     Cookies.remove('pick-mix-cart');
 
 }
