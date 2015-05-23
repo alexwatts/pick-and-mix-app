@@ -193,10 +193,14 @@ function updateProgressIndicators() {
     if (areWeAtThree()) {
         //active 3 status
         $('.summary-progress-3').addClass('complete');
+    } else {
+        $('.summary-progress-3').removeClass('complete');
     }
     if (areWeAtSix()) {
         //activate 6 status
         $('.summary-progress-6').addClass('complete');
+    } else {
+        $('.summary-progress-6').removeClass('complete');
     }
 };
 
