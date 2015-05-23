@@ -126,10 +126,7 @@ function addProductToCart(productId) {
     //extract the image
     if (!isCartFull()) {
 
-        var summaryDiv =  $('.item-' + getNextImageId());
-        summaryDiv.addClass('selected');
-        var summaryItemImg = summaryDiv.find('.summary-item-img');
-        summaryItemImg.html("<img onclick='' src='" + productImage.attr('src') + "'>");
+        updateSummaryWithImage(productImage.attr('src'),  getNextImageId());
 
     } else {
 
@@ -142,17 +139,44 @@ function addProductToCart(productId) {
     //add the product to the card
     cart.push(productId);
 
+    fireEventChanges();
 
 };
+
+function rebuildSummaryItems() {
+
+    //clear items from summary
+    for (i=1; i < 7; i++) {
+        updateSummaryWithImage()
+    }
+
+    //from 1 to cart length
+        //add  item to summary
+
+}
+
+function updateSummaryWithImage(imageSrc, imageId) {
+
+
+    var summaryDiv =  $('.item-' + imageId);
+    summaryDiv.addClass('selected');
+    var summaryItemImg = summaryDiv.find('.summary-item-img');
+    summaryItemImg.html("<img onclick='' src='" + imageSrc + "'>");
+}
 
 function updateProgressIndicators() {
     if (areWeAtThree()) {
         //active 3 status
-        $('summary-progress-container-1').addClass('complete');
+        $('.summary-progress-3').addClass('complete');
     }
     if (areWeAtSix()) {
         //activate 6 status
+        $('.summary-progress-6').addClass('complete');
     }
+}
+
+function fireEventChanges() {
+    updateProgressIndicators();
 }
 
 function getNextImageId() {
@@ -172,9 +196,9 @@ function getNumberOfItemsInCart() {
 }
 
 function areWeAtThree() {
-    return cart.length = 3;
+    return cart.length == 3;
 }
 
 function areWeAtSix() {
-    return cart.length = 6;
+    return cart.length == 6;
 }
