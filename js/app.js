@@ -194,6 +194,8 @@ function buildSelectedItems() {
 
     var selectedItemList = $('.selected-item-list');
 
+    selectedItemList.empty();
+
     //if it's three
     if (cart.length == 3) {
 
