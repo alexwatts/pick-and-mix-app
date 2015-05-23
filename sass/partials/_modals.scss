@@ -1,0 +1,86 @@
+//
+// Modals
+// --------------------------------------------------
+
+// Shell div to position the modal with bottom padding
+.modal-dialog {
+  // position: relative;
+  width: 300px;
+  margin: 50px auto;
+}
+
+.modal-content {
+  // position: relative;
+  background-color: #fff;
+  background-color: rgba(255,255,255,.95);
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+  // background-clip: padding-box;
+  // Remove focus outline from opened modal
+  // outline: 0;
+}
+
+// Modal background
+.modal-backdrop {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background-color: #000;
+  // Fade for backdrop
+  // &.fade { @include opacity(0); }
+  &.in { opacity: 0.85; }
+  z-index: 2;
+}
+
+.modal-header {
+  padding: 20px 15px 15px;
+  border-bottom: none;
+  // min-height: ($modal-title-padding + $modal-title-line-height);
+}
+
+h4.modal-title {
+  font-size: 17px;
+}
+
+.modal-body {
+  padding: 0 15px;
+
+  p {
+    font-size: 14px;
+  }
+}
+
+// Footer (for actions)
+.modal-footer {
+  padding: 15px;
+  // text-align: right; // right align buttons
+  border-top: none;
+  // @include clearfix; // clear it in case folks use .pull-* classes on buttons
+
+  .btn-close {
+    min-width: 0;
+    text-decoration: underline;
+    padding: 6px 0 6px 12px;
+
+    &:active {
+      box-shadow: none;
+    }
+  }
+
+  // Properly space out buttons
+  .btn + .btn {
+    margin-left: 5px;
+    margin-bottom: 0; // account for input[type="submit"] which gets the bottom margin like all other inputs
+  }
+  // but override that for button groups
+  .btn-group .btn + .btn {
+    margin-left: -1px;
+  }
+  // and override it for block buttons as well
+  .btn-block + .btn-block {
+    margin-left: 0;
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "convertHtml": {
+    "relativePaths": false
+  },
+  "customRubyPath": null,
+  "debug": false,
+  "domain": null,
+  "followLeader": false,
+  "lintScripts": false,
+  "modelSource": null,
+  "preprocessorLocations": [
+    "/"
+  ],
+  "preprocessorScriptOutput": "js",
+  "preprocessorStyleOutput": "css",
+  "projectDescription": "My project description",
+  "projectName": "Molton Brown Pick & Mix App",
+  "publishedId": null,
+  "serverHostname": null,
+  "serverPort": null,
+  "simpleModePartnerServer": null,
+  "templateDefaultLayout": "layout",
+  "templateDefaultPage": "index",
+  "templateDirectory": "templates",
+  "type": "simple",
+  "useCompass": false,
+  "optimiseImages": false, 
+  "autoPrefixer": {
+    "active": true,
+    "browsers": [
+      "> 1%",
+      "last 2 versions",
+      "Firefox ESR",
+      "Opera 12.1"
+    ],
+    "sourceMap": false
+  }
+}

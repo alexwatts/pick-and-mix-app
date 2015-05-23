@@ -1,0 +1,67 @@
+//
+// Buttons
+// --------------------------------------------------
+
+.btn {
+  font-size: 13px;
+  text-transform: uppercase;
+  border-radius: 0;
+
+  &.disabled {
+    background-color: #d8d7d7;
+    border-color: #d8d7d7;
+  }
+}
+.btn-default {
+  color: #fff;
+  background-color: #5a5a5a;
+  border: none;
+
+  &:hover,
+  &:focus,
+  &:active {
+    color: #fff;
+    background-color: darken(#5a5a5a, 10%);
+  }
+}
+.btn-primary {
+  min-width: 140px;
+  color: #fff;
+  background-color: #000;
+  border: none;
+
+  &:hover,
+  &:focus,
+  &:active {
+    color: #fff;
+    background-color: lighten(#000, 10%);
+  }
+}
+.btn-add {
+  display: block;
+  position: absolute;
+  top: 20%;
+  left: 52%;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: url(../images/add.svg) no-repeat center center #000;
+
+  span {
+    display: none;
+  }
+}
+.btn-lg {
+  
+}
+.btn-secondary {
+  color: #fff;
+  background-color: #be514f;
+
+  &:hover,
+  &:focus,
+  &.focus {
+    color: #fff;
+    text-decoration: none;
+  }
+}
