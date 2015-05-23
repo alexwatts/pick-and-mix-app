@@ -120,11 +120,14 @@ $(function(){
 
 });
 
+var selectedBag = "";
+
 var cart = new Array() // namespace for the card
 
 var prices = {
     "three" : 23,
-    "six" : 40
+    "six" : 40,
+    "bagPrice" : 10
 }
 
 //Cart API
@@ -173,6 +176,55 @@ function removeProductFromCart(e, removeIndex) {
 
     fireEventChanges();
 };
+
+function handleBagSelect(e, productId) {
+
+    e.preventDefault();
+    selectedBag = productId;
+    fireEventChanges();
+
+}
+
+function handleContinue(e) {
+
+    e.preventDefault();
+
+    var products = new Array();
+    var distinctProductCodes = new Array();
+    var productMap = {};
+
+    for (i=0; i<cart.length; i++) {
+        if (productMap[cart[i].productId] == undefined) {
+            distinctProductCodes.push(cart[i].productId);
+            productMap[cart[i].productId] = 1;
+        } else {
+            productMap[cart[i].productId] = productMap[cart[i].productId] + 1;
+        }
+    }
+
+    for (i = 0; i<distinctProductCodes.length; i++) {
+        products.push({
+            product: {
+                id: distinctProductCodes[i],
+                quantity: productMap[distinctProductCodes[i]]
+            }
+        })
+    }
+
+    if (selectedBag != "") {
+        products.push({
+            product: {
+                id: selectedBag,
+                quantity: 1
+            }
+        })
+    }
+
+
+    alert(JSON.stringify(products));
+
+
+}
 
 function rebuildSummaryItems() {
 
@@ -261,10 +313,11 @@ function updateSummaryWithImage(imageSrc, imageId) {
 
 };
 
-function updateProgressIndicatorsAndPriceAndContinue() {
+function updateProgressIndicatorsAndPriceAndContinueAndBag() {
     updateProgressIndicators();
     updatePrice();
     updateContinue();
+    updateBagPrice();
 };
 
 function updateProgressIndicators() {
@@ -284,6 +337,18 @@ function updateProgressIndicators() {
 
 function updatePrice() {
     $('.set-price').html('Price: &pound;' + getPrice());
+}
+
+function updateBagPrice() {
+
+    var price = 0;
+
+    if (selectedBag == "") {
+        price = getPrice();
+    } else {
+        price = getPrice() + prices.bagPrice;
+    }
+    $('.total-price').html('Price: &pound;' + price);
 }
 
 function updateContinue() {
@@ -314,7 +379,7 @@ function getPrice() {
 
 
 function fireEventChanges() {
-    updateProgressIndicatorsAndPriceAndContinue();
+    updateProgressIndicatorsAndPriceAndContinueAndBag();
 };
 
 function getNextImageId() {

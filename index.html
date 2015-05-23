@@ -958,7 +958,7 @@
                   <div class="partner-itemlist clearfix">
 
                       <div class="partner-item">
-                          <a href="#" class="selected">
+                          <a onclick="handleBagSelect(event,'')" href="#" class="selected">
                               <div class="product-img"><img src="images/products/stowaway-bag-ghost.jpg"></div>
                               <div class="product-description">
                                   <h3 class="product-title">No Bag</h3>
@@ -969,8 +969,8 @@
                           </a>
                       </div><!-- /.partner-item -->
 
-                      <div class="partner-item">
-                          <a href="#" class="">
+                      <div data-product-id="BAG001" class="partner-item">
+                          <a onclick="handleBagSelect(event, 'BAG001')" href="#" class="">
                               <div class="product-img"><img src="images/products/stowaway-bag-blue.jpg"></div>
                               <div class="product-description">
                                   <h3 class="product-title">Blue Stowaway Bag</h3>
@@ -982,8 +982,8 @@
                           </a>
                       </div><!-- /.partner-item -->
 
-                      <div class="partner-item">
-                          <a href="#" class="">
+                      <div data-product-id="BAG002" class="partner-item">
+                          <a href="#" onclick="handleBagSelect(event, 'BAG002')" class="">
                               <div class="product-img"><img src="images/products/stowaway-bag-pink.jpg"></div>
                               <div class="product-description">
                                   <h3 class="product-title">Pink Stowaway Bag</h3>
@@ -999,7 +999,7 @@
 
                   <div class="price-container clearfix">
                       <div class="price total-price">Price: &pound;23</div>
-                      <div class="continue"><a href="#" class="btn btn-primary">Continue</a></div>
+                      <div class="continue"><a onclick="handleContinue(event)" href="#" class="btn btn-primary">Continue</a></div>
                   </div>
 
               </div><!-- /.partner-container -->
