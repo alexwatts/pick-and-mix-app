@@ -150,7 +150,7 @@ var prices = {
     "three" : 23,
     "six" : 40,
     "bagPrice" : 10
-}
+};
 
 //Cart API
 function addProductToCart(e, productId) {
@@ -257,7 +257,7 @@ function handleContinue(e) {
         contentType: 'application/json;charset=UTF-8'
     });
 
-    //alert(JSON.stringify(products));
+    alert(JSON.stringify(dataToSend));
     Cookies.remove('pick-mix-cart');
 
 }
