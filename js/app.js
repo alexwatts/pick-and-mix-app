@@ -226,7 +226,7 @@ function getNumberOfItemsInCart() {
 };
 
 function areWeAtThree() {
-    return cart.length == 3;
+    return cart.length >= 3 ;
 };
 
 function areWeAtSix() {
