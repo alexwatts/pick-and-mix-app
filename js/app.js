@@ -122,6 +122,11 @@ $(function(){
 
 var cart = new Array() // namespace for the card
 
+var prices = {
+    "three" : 23,
+    "six" : 40
+}
+
 //Cart API
 function addProductToCart(e, productId) {
 
@@ -131,6 +136,8 @@ function addProductToCart(e, productId) {
     var productDiv = $('div[data-product-id=' + productId + ']');
     var productImageDiv = productDiv.find('.product-img');
     var productImage = productImageDiv.find('img');
+    var productDescriptionDiv = productDiv.find('.product-description');
+    var productTitle = productDescriptionDiv.find('.product-title');
 
     //extract the image
     if (!isCartFull()) {
@@ -141,7 +148,8 @@ function addProductToCart(e, productId) {
         //add the product to the card
         cart.push({
             "productId": productId,
-            "src": productImage.attr('src')
+            "src": productImage.attr('src'),
+            "title": productTitle[0].innerText
         });
 
         fireEventChanges();
@@ -181,6 +189,61 @@ function rebuildSummaryItems() {
     }
 
 };
+
+function buildSelectedItems() {
+
+    var selectedItemList = $('.selected-item-list');
+
+    //if it's three
+    if (cart.length == 3) {
+
+        addSelectedItem(selectedItemList, '', cart[0]);
+        addSelectedItem(selectedItemList, '', cart[1]);
+        addSelectedItem(selectedItemList, '', cart[2])
+
+    } else if (cart.length == 6) {
+
+        addSelectedItem(selectedItemList, 'left',  cart[0]);
+        addSelectedItem(selectedItemList, 'left',  cart[1]);
+        addSelectedItem(selectedItemList, '',      cart[2]);
+        addSelectedItem(selectedItemList, '',      cart[3]);
+        addSelectedItem(selectedItemList, 'right', cart[4]);
+        addSelectedItem(selectedItemList, 'right', cart[5])
+
+    }
+
+    $(".more-info-trigger a").click(function(event){
+
+        if( $(this).hasClass("active") ) {
+            $(this).removeClass("active");
+            $(".more-info-content").hide();
+            event.preventDefault();
+        } else {
+            $(".more-info-trigger a").removeClass("active");
+            $(".more-info-content").hide();
+            $(this).addClass("active");
+            $(this).parent().next(".more-info-content").show();
+            event.preventDefault();
+        }
+    });
+
+}
+
+function addSelectedItem(selectedItems, cssClass, product) {
+
+    var selectedItem = '<div class="selected-item">' +
+                            '<div class="selected-item-img"><img src="' + product.src + '"></div>' +
+                            '<div class="more-info">' +
+                                '<div class="more-info-trigger"><a href="#"><span>Info</span></a></div>' +
+                                '<div class="more-info-content ' + cssClass + '">' +
+                                '<span>' + product.title + '</span>'+
+                                '</div>' +
+                            '</div>' +
+                        '</div>';
+
+    selectedItems.append(selectedItem);
+
+}
 
 function updateSummaryWithImage(imageSrc, imageId) {
 
@@ -238,13 +301,12 @@ function canContinue() {
 }
 
 function getPrice() {
-
     if (cart.length < 3) {
         return 0;
     } else if (cart.length < 6) {
-        return 23;
+        return prices.three;
     } else {
-        return 40;
+        return prices.six;
     }
 }
 
