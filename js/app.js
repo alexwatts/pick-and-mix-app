@@ -17,7 +17,7 @@ $(function(){
         $("#loader").fadeOut();
         $("#overlay").delay(800).fadeOut("slow");
         // console.log( "window loaded" );          
-    })
+    });
 
 
     //!! start of app scripts !!//
@@ -82,7 +82,7 @@ $(function(){
           horizontal: true
         })
       })
-    })
+    });
 
     // this does left scroll
 
@@ -109,7 +109,18 @@ $(function(){
           horizontal: true
         })
       })
-    })
+    });
+
+
+
+
 
 
 });
+
+var cart = new Array() // namespace for the card
+
+//Cart API
+function addProductToCart(productId) {
+    alert(productId);
+};
