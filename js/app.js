@@ -196,9 +196,10 @@ function updateSummaryWithImage(imageSrc, imageId) {
 
 };
 
-function updateProgressIndicatorsAndPrice() {
+function updateProgressIndicatorsAndPriceAndContinue() {
     updateProgressIndicators();
     updatePrice();
+    updateContinue();
 };
 
 function updateProgressIndicators() {
@@ -220,6 +221,22 @@ function updatePrice() {
     $('.set-price').html('Price: &pound;' + getPrice());
 }
 
+function updateContinue() {
+    if (canContinue()) {
+        $('.btn-continue').removeClass('disabled');
+    } else {
+        $('.btn-continue').addClass('disabled');
+    }
+}
+
+function canContinue() {
+    if (getNumberOfItemsInCart() == 3 || getNumberOfItemsInCart() == 6) {
+        return true;
+    } else {
+        return false;
+    }
+}
+
 function getPrice() {
 
     if (cart.length < 3) {
@@ -231,8 +248,9 @@ function getPrice() {
     }
 }
 
+
 function fireEventChanges() {
-    updateProgressIndicatorsAndPrice();
+    updateProgressIndicatorsAndPriceAndContinue();
 };
 
 function getNextImageId() {
@@ -248,7 +266,6 @@ function isCartEmpty() {
 };
 
 function getNumberOfItemsInCart() {
-    console.log('number of items in cart' + cart.length);
     return cart.length;
 };
 
