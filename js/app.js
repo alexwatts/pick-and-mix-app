@@ -111,16 +111,51 @@ $(function(){
       })
     });
 
-
-
-
-
-
 });
 
 var cart = new Array() // namespace for the card
 
 //Cart API
 function addProductToCart(productId) {
-    alert(productId);
+
+    //find the product div
+    var productDiv = $('div[data-product-id=' + productId + ']');
+    var productImageDiv = productDiv.find('.product-img');
+    var productImage = productImageDiv.find('img');
+
+    //extract the image
+    if (!isCartFull()) {
+
+        var summaryDiv =  $('.item-' + getNextImageId());
+        var summaryItemImg = summaryDiv.find('.summary-item-img');
+        summaryItemImg.html("<img onclick='' src='" + productImage.attr('src') + "'>");
+
+    } else {
+
+        //Load modal
+
+    }
+
+    //add the image to the carousel dom elemetn
+
+    //add the product to the card
+    cart.push(productId);
+
+
 };
+
+function getNextImageId() {
+    return getNumberOfItemsInCart() + 1;
+}
+
+function isCartFull() {
+    return cart.length > 5;
+}
+
+function isCartEmpty() {
+    return cart.lengh - 0;
+}
+
+function getNumberOfItemsInCart() {
+    return cart.length;
+}
