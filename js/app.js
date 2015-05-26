@@ -24,8 +24,63 @@ $(function(){
     // tabs fix remove when hidden
 
     $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
-        var target = this.href.split('#');
-        $('.nav a').filter('[href="#'+target[1]+'"]').tab('show');
+        // var target = this.href.split('#');
+        // $('.nav a').filter('[href="#'+target[1]+'"]').tab('show');
+
+        // fire waypoint again for category highlighting function
+
+        //this does right scroll
+
+        $.each(['category-itemlist'], function(i, classname) {
+          var $elements = $('.' + classname)
+
+          $elements.each(function() {
+            new Waypoint({
+              element: this,
+              handler: function(direction) {
+                if (direction === 'right') {
+                  var nav = $('ul.category-list')
+
+                  $elements.removeClass('current')
+                  nav.find('a').removeClass('active')
+                  $(this.element).addClass('current')
+                  nav.find('a[href="#'+$(this.element).attr('id')+'"]').addClass('active')
+                }
+              },
+              offset: 1,
+              group: classname,
+              context: $('.product-container'),
+              horizontal: true
+            })
+          })
+        });
+
+        // this does left scroll
+
+        $.each(['category-itemlist'], function(i, classname) {
+          var $elements = $('.' + classname)
+
+          $elements.each(function() {
+            new Waypoint({
+              element: this,
+              handler: function(direction) {
+                if (direction === 'left') {
+                  var nav = $('ul.category-list')
+
+                  $elements.removeClass('current')
+                  nav.find('a').removeClass('active')
+                  $(this.element).addClass('current')
+                  nav.find('a[href="#'+$(this.element).attr('id')+'"]').addClass('active')
+                }
+              },
+              // offset: '-100%',
+              offset: 'right-in-view',
+              group: classname,
+              context: $('.product-container'),
+              horizontal: true
+            })
+          })
+        });
     })
 
     // add bag radio button
