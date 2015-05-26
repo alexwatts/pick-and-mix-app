@@ -194,6 +194,10 @@ body {
 		margin: 0 auto;
 		background: url(../images/info-close-icon.svg) no-repeat 0 0;
 
+		.no-svg & {
+			background-image: url(../images/info-close-icon.png);
+		}
+
 		span {
 			display: none;
 		}
@@ -550,6 +554,10 @@ a.selected .btn-select {
 	overflow: hidden;
 	position: relative;
 
+	.no-svg & {
+		background-image: url(../images/bottle-1.png);
+	}
+
 	img {
 		width: auto;
 		height: 56px;
@@ -560,18 +568,38 @@ a.selected .btn-select {
 
 	.item-2 & {
 		background-image: url(../images/bottle-2.svg);
+
+		.no-svg & {
+			background-image: url(../images/bottle-2.png);
+		}
 	}
 	.item-3 & {
 		background-image: url(../images/bottle-3.svg);
+
+		.no-svg & {
+			background-image: url(../images/bottle-3.png);
+		}
 	}
 	.item-4 & {
 		background-image: url(../images/bottle-4.svg);
+
+		.no-svg & {
+			background-image: url(../images/bottle-4.png);
+		}
 	}
 	.item-5 & {
 		background-image: url(../images/bottle-5.svg);
+
+		.no-svg & {
+			background-image: url(../images/bottle-5.png);
+		}
 	}
 	.item-6 & {
 		background-image: url(../images/bottle-6.svg);
+
+		.no-svg & {
+			background-image: url(../images/bottle-6.png);
+		}
 	}
 
 	.selected & {
@@ -587,6 +615,10 @@ a.selected .btn-select {
 
 	.selected & {
 		background: url(../images/tick-white.svg) no-repeat center 0 #9bbb59;
+
+		.no-svg & {
+			background-image: url(../images/tick-white.png);
+		}
 	}
 }
 

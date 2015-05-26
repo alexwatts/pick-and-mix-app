@@ -97,6 +97,8 @@ h4.modal-title {
   height: 50px;
   border-radius: 50%;
   background: url(../images/add.svg) no-repeat center center #000; }
+  .no-svg .btn-add {
+    background-image: url(../images/add.png); }
   .btn-add span {
     display: none; }
 
@@ -211,6 +213,8 @@ body {
   display: block;
   margin: 0 auto;
   background: url(../images/info-close-icon.svg) no-repeat 0 0; }
+  .no-svg .more-info-trigger a {
+    background-image: url(../images/info-close-icon.png); }
   .more-info-trigger a span {
     display: none; }
   .more-info-trigger a.active {
@@ -476,6 +480,8 @@ a.selected .btn-select:after {
   background: url(../images/bottle-1.svg) no-repeat center center #898989;
   overflow: hidden;
   position: relative; }
+  .no-svg .summary-item-img {
+    background-image: url(../images/bottle-1.png); }
   .summary-item-img img {
     width: auto;
     height: 56px;
@@ -486,14 +492,24 @@ a.selected .btn-select:after {
     transform: translateX(-50%); }
   .item-2 .summary-item-img {
     background-image: url(../images/bottle-2.svg); }
+    .no-svg .item-2 .summary-item-img {
+      background-image: url(../images/bottle-2.png); }
   .item-3 .summary-item-img {
     background-image: url(../images/bottle-3.svg); }
+    .no-svg .item-3 .summary-item-img {
+      background-image: url(../images/bottle-3.png); }
   .item-4 .summary-item-img {
     background-image: url(../images/bottle-4.svg); }
+    .no-svg .item-4 .summary-item-img {
+      background-image: url(../images/bottle-4.png); }
   .item-5 .summary-item-img {
     background-image: url(../images/bottle-5.svg); }
+    .no-svg .item-5 .summary-item-img {
+      background-image: url(../images/bottle-5.png); }
   .item-6 .summary-item-img {
     background-image: url(../images/bottle-6.svg); }
+    .no-svg .item-6 .summary-item-img {
+      background-image: url(../images/bottle-6.png); }
   .selected .summary-item-img {
     background: #fff; }
 
@@ -504,6 +520,8 @@ a.selected .btn-select:after {
   background-color: #898989; }
   .selected .summary-selection-indicator {
     background: url(../images/tick-white.svg) no-repeat center 0 #9bbb59; }
+    .no-svg .selected .summary-selection-indicator {
+      background-image: url(../images/tick-white.png); }
 
 .summary-progress-container {
   width: 100%;

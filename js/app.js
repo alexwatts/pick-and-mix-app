@@ -19,7 +19,7 @@ $(function(){
     });
 
 
-    //!! start of app scripts !!//
+    //!! start of app ui scripts !!//
 
     // tabs fix remove when hidden
 
@@ -142,9 +142,11 @@ $(function(){
 
 });
 
+// app js script //
+
 var selectedBag = "";
 
-var cart = new Array() // namespace for the card
+var cart = new Array() // namespace for the cart
 
 var prices = {
     "three" : 23,
@@ -170,7 +172,7 @@ function addProductToCart(e, productId) {
         //Update the summary dom
         updateSummaryWithImage(productImage.attr('src'),  getNextImageId());
 
-        //add the product to the card
+        //add the product to the cart
         cart.push({
             "productId": productId,
             "src": productImage.attr('src'),
@@ -252,7 +254,7 @@ function handleContinue(e) {
 
     $.ajax({
         type: "POST",
-        url: 'http://localhost:8000/deal',
+        url: 'http://localhost:7774/deal',
         data: JSON.stringify(dataToSend),
         dataType: 'json',
         contentType: 'application/json;charset=UTF-8'

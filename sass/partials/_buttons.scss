@@ -47,6 +47,10 @@
   border-radius: 50%;
   background: url(../images/add.svg) no-repeat center center #000;
 
+  .no-svg & {
+    background-image: url(../images/add.png);
+  }
+
   span {
     display: none;
   }
