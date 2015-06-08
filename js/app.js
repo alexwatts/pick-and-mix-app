@@ -1,5 +1,7 @@
 $(function(){
 
+    // TODO: in final object need to pass through an extra value, product ID as well as SKU & QTY
+
     // touch detection
 
     function is_touch_device() {
