@@ -1,0 +1,40 @@
+//
+// Variables
+// --------------------------------------------------
+
+
+//== Colors
+//
+
+$black:             	#000;
+$white:             	#fff;
+$primary:               #464646;
+$orange:                #ff9146;
+$lightgrey:             #f6f6f6;
+$bordergrey:            #c2c2c2;
+$pink:                  #de0461;
+$green:                 #9bbb59;
+$red:                   #d40707;
+
+
+//
+// Mixins & Functions
+// --------------------------------------------------
+
+// function for quickly working out em values
+
+$em-base: 14px !default;
+
+@function em($pxval, $base: $em-base) {
+  @if not unitless($pxval) {
+    $pxval: strip-units($pxval);
+  }
+  @if not unitless($base) {
+    $base: strip-units($base);
+  }
+  @return ($pxval / $base) * 1em;
+}
+
+@function strip-units($val) {
+  @return ($val / ($val * 0 + 1));
+}

@@ -1,7 +1,7 @@
 {
   "name": "pick-and-mix-app",
   "version": "1.0.0",
-  "description": "Molton Brown Pick & Mix App",
+  "description": "Molton Brown Pick & Mix App Mobile",
   "main": "index.html",
   "scripts": {
     "test": "test"

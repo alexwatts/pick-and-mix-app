@@ -42,14 +42,14 @@
 }
 
 h4.modal-title {
-  font-size: 17px;
+  font-size: em(17);
 }
 
 .modal-body {
   padding: 0 15px;
 
   p {
-    font-size: 14px;
+    font-size: em(14);
   }
 }
 
