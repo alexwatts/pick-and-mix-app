@@ -23,11 +23,20 @@ $(function(){
 
     //!! start of app ui scripts !!//
 
+    // lazy load images
+
+    $("img.lazy").lazyload({
+        effect : "fadeIn",
+        container : $(".product-container"),
+        // placeholder : "images/loading-spinner@2x.gif"
+        threshold : 20
+    });
+
     // tabs functions
 
     $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
         categoryWaypoint();
-    })
+    });
 
     // add bag radio button
 

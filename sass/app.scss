@@ -124,8 +124,9 @@ body {
 
 .product-container {
 	// height: 1000px;
-	overflow-x: auto;
+	overflow-x: scroll;
 	overflow-y: hidden;
+  	-webkit-overflow-scrolling: touch;
 	width: 100%;
 	padding-bottom: 20px;
 }
@@ -165,9 +166,11 @@ body {
 	}
 
 	img {
-		width: 100%;
+		// width: 100%;
 		max-width: 400px;
 		min-width: 200px;
+		width: 200px;
+		height: 200px;
 	}
 }
 
@@ -260,7 +263,9 @@ body {
 }
 
 .category-nav {
-	overflow: auto;
+	overflow-x: scroll;
+	overflow-y: hidden;
+	-webkit-overflow-scrolling: touch;
 	height: 54px;
 }
 
