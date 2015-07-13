@@ -1,6 +1,6 @@
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="no-js">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -39,7 +39,7 @@
               <h2 class="intro">Create your unique travel bag.</h2>
               <div class="start-container existing-cart">
                   <div class="continue-container">
-                      <a href="#pick" data-toggle="tab" class="btn btn-secondary btn-lg center-block">Continue</a>
+                      <a href="#pick" data-toggle="tab" id="continue" class="btn btn-secondary btn-lg center-block">Continue</a>
                       <span>or</span>
                   </div>
                   <a href="#" data-toggle="modal" data-target="#modalContinue" class="btn btn-primary btn-lg center-block">Start</a>
@@ -114,6 +114,8 @@
                       <div class="continue"><a onclick="buildSelectedItems()" href="#pack" data-toggle="tab" class="btn btn-primary btn-continue disabled">Continue</a></div>
                   </div>
 
+                  <div class="remove-tooltip">Tap or click a product to remove from your selection</div>
+
               </div><!-- /.progress-box -->
 
               <div class="category-nav-container">
@@ -138,7 +140,7 @@
                       <div class="category-itemlist" id="category-01">
 
                           <div data-product-id="KBT001" class="product-item">
-                              <div class="product-img"><img class="lazy" data-original="images/products/product-placeholder.jpg" width="200" height="200"></div>
+                              <div class="product-img"><img class="lazy" data-src="images/products/product-placeholder.jpg"></div>
                               <div class="product-description">
                                   <h3 class="product-title">100ml Blossoming Honeysuckle &amp; White Tea Bath &amp; Shower Gel</h3>
                                   <div class="more-info">
@@ -152,11 +154,12 @@
                                       </div>
                                   </div>
                               </div>
-                              <a onclick="addProductToCart(event,'KBT001');" href="#" class="btn-add"><span>Add</span></a>
+                              <span class="out-of-stock">Out of stock</span>
+                              <!--<a onclick="addProductToCart(event,'KBT001');" href="#" class="btn-add"><span>Add</span></a>-->
                           </div><!-- /.product-item -->
 
                           <div data-product-id="KBT002" class="product-item">
-                              <div class="product-img"><img class="lazy" data-original="images/products/product-placeholder.jpg"></div>
+                              <div class="product-img"><img class="lazy" data-src="images/products/product-placeholder.jpg"></div>
                               <div class="product-description">
                                   <h3 class="product-title">100ml Blossoming Honeysuckle </h3>
                                   <div class="more-info">
@@ -174,7 +177,7 @@
                           </div><!-- /.product-item -->
 
                           <div data-product-id="KBT003" class="product-item">
-                              <div class="product-img"><img class="lazy" data-original="images/products/product-placeholder.jpg"></div>
+                              <div class="product-img"><img class="lazy" data-src="images/products/product-placeholder.jpg"></div>
                               <div class="product-description">
                                   <h3 class="product-title">100ml Blossoming Honeysuckle &amp; White Tea Bath &amp; Shower Gel</h3>
                                   <div class="more-info">
@@ -192,7 +195,7 @@
                           </div><!-- /.product-item -->
 
                           <div data-product-id="KBT004" class="product-item">
-                              <div class="product-img"><img class="lazy" data-original="images/products/product-placeholder.jpg"></div>
+                              <div class="product-img"><img class="lazy" data-src="images/products/product-placeholder.jpg"></div>
                               <div class="product-description">
                                   <h3 class="product-title">100ml Blossoming Honeysuckle &amp; White Tea Bath &amp; Shower Gel</h3>
                                   <div class="more-info">
@@ -210,7 +213,7 @@
                           </div><!-- /.product-item -->
 
                           <div data-product-id="KBT005" class="product-item">
-                              <div class="product-img"><img class="lazy" data-original="images/products/product-placeholder.jpg"></div>
+                              <div class="product-img"><img class="lazy" data-src="images/products/product-placeholder.jpg"></div>
                               <div class="product-description">
                                   <h3 class="product-title">100ml Blossoming Honeysuckle &amp; White Tea Bath &amp; Shower Gel</h3>
                                   <div class="more-info">
@@ -228,7 +231,7 @@
                           </div><!-- /.product-item -->
 
                           <div data-product-id="KBT006" class="product-item">
-                              <div class="product-img"><img class="lazy" data-original="images/products/product-placeholder.jpg"></div>
+                              <div class="product-img"><img class="lazy" data-src="images/products/product-placeholder.jpg"></div>
                               <div class="product-description">
                                   <h3 class="product-title">100ml Blossoming Honeysuckle &amp; White Tea Bath &amp; Shower Gel</h3>
                                   <div class="more-info">
@@ -246,7 +249,7 @@
                           </div><!-- /.product-item -->
 
                           <div data-product-id="KBT007" class="product-item">
-                              <div class="product-img"><img class="lazy" data-original="images/products/product-placeholder.jpg"></div>
+                              <div class="product-img"><img class="lazy" data-src="images/products/product-placeholder.jpg"></div>
                               <div class="product-description">
                                   <h3 class="product-title">100ml Blossoming Honeysuckle &amp; White Tea Bath &amp; Shower Gel</h3>
                                   <div class="more-info">
@@ -268,7 +271,7 @@
                       <div class="category-itemlist" id="category-02">
 
                           <div data-product-id="KBT008" class="product-item">
-                              <div class="product-img"><img class="lazy" data-original="images/products/product-placeholder-02.jpg"></div>
+                              <div class="product-img"><img class="lazy" data-src="images/products/product-placeholder-02.jpg"></div>
                               <div class="product-description">
                                   <h3 class="product-title">100ml Blossoming Honeysuckle &amp; White Tea Bath &amp; Shower Gel</h3>
                                   <div class="more-info">
@@ -286,7 +289,7 @@
                           </div><!-- /.product-item -->
 
                           <div data-product-id="KBT009" class="product-item">
-                              <div class="product-img"><img class="lazy" data-original="images/products/product-placeholder-02.jpg"></div>
+                              <div class="product-img"><img class="lazy" data-src="images/products/product-placeholder-02.jpg"></div>
                               <div class="product-description">
                                   <h3 class="product-title">100ml Blossoming Honeysuckle &amp; White Tea Bath &amp; Shower Gel</h3>
                                   <div class="more-info">
@@ -304,7 +307,7 @@
                           </div><!-- /.product-item -->
 
                           <div data-product-id="KBT010" class="product-item">
-                              <div class="product-img"><img class="lazy" data-original="images/products/product-placeholder-02.jpg"></div>
+                              <div class="product-img"><img class="lazy" data-src="images/products/product-placeholder-02.jpg"></div>
                               <div class="product-description">
                                   <h3 class="product-title">100ml Blossoming Honeysuckle &amp; White Tea Bath &amp; Shower Gel</h3>
                                   <div class="more-info">
@@ -322,7 +325,7 @@
                           </div><!-- /.product-item -->
 
                           <div data-product-id="KBT011" class="product-item">
-                              <div class="product-img"><img class="lazy" data-original="images/products/product-placeholder-02.jpg"></div>
+                              <div class="product-img"><img class="lazy" data-src="images/products/product-placeholder-02.jpg"></div>
                               <div class="product-description">
                                   <h3 class="product-title">100ml Blossoming Honeysuckle &amp; White Tea Bath &amp; Shower Gel</h3>
                                   <div class="more-info">
@@ -340,7 +343,7 @@
                           </div><!-- /.product-item -->
 
                           <div data-product-id="KBT012" class="product-item">
-                              <div class="product-img"><img class="lazy" data-original="images/products/product-placeholder-02.jpg"></div>
+                              <div class="product-img"><img class="lazy" data-src="images/products/product-placeholder-02.jpg"></div>
                               <div class="product-description">
                                   <h3 class="product-title">100ml Blossoming Honeysuckle &amp; White Tea Bath &amp; Shower Gel</h3>
                                   <div class="more-info">
@@ -358,7 +361,7 @@
                           </div><!-- /.product-item -->
 
                           <div data-product-id="KBT013" class="product-item">
-                              <div class="product-img"><img class="lazy" data-original="images/products/product-placeholder-02.jpg"></div>
+                              <div class="product-img"><img class="lazy" data-src="images/products/product-placeholder-02.jpg"></div>
                               <div class="product-description">
                                   <h3 class="product-title">100ml Blossoming Honeysuckle &amp; White Tea Bath &amp; Shower Gel</h3>
                                   <div class="more-info">
@@ -376,7 +379,7 @@
                           </div><!-- /.product-item -->
 
                           <div data-product-id="KBT014" class="product-item">
-                              <div class="product-img"><img class="lazy" data-original="images/products/product-placeholder-02.jpg"></div>
+                              <div class="product-img"><img class="lazy" data-src="images/products/product-placeholder-02.jpg"></div>
                               <div class="product-description">
                                   <h3 class="product-title">100ml Blossoming Honeysuckle &amp; White Tea Bath &amp; Shower Gel</h3>
                                   <div class="more-info">
@@ -398,7 +401,7 @@
                       <div class="category-itemlist" id="category-03">
 
                           <div data-product-id="KBT015" class="product-item">
-                              <div class="product-img"><img class="lazy" data-original="images/products/product-placeholder-03.jpg"></div>
+                              <div class="product-img"><img class="lazy" data-src="images/products/product-placeholder-03.jpg"></div>
                               <div class="product-description">
                                   <h3 class="product-title">100ml Blossoming Honeysuckle &amp; White Tea Bath &amp; Shower Gel</h3>
                                   <div class="more-info">
@@ -416,7 +419,7 @@
                           </div><!-- /.product-item -->
 
                           <div data-product-id="KBT016" class="product-item">
-                              <div class="product-img"><img class="lazy" data-original="images/products/product-placeholder-03.jpg"></div>
+                              <div class="product-img"><img class="lazy" data-src="images/products/product-placeholder-03.jpg"></div>
                               <div class="product-description">
                                   <h3 class="product-title">100ml Blossoming Honeysuckle &amp; White Tea Bath &amp; Shower Gel</h3>
                                   <div class="more-info">
@@ -434,7 +437,7 @@
                           </div><!-- /.product-item -->
 
                           <div data-product-id="KBT017" class="product-item">
-                              <div class="product-img"><img class="lazy" data-original="images/products/product-placeholder-03.jpg"></div>
+                              <div class="product-img"><img class="lazy" data-src="images/products/product-placeholder-03.jpg"></div>
                               <div class="product-description">
                                   <h3 class="product-title">100ml Blossoming Honeysuckle &amp; White Tea Bath &amp; Shower Gel</h3>
                                   <div class="more-info">
@@ -452,7 +455,7 @@
                           </div><!-- /.product-item -->
 
                           <div data-product-id="KBT018" class="product-item">
-                              <div class="product-img"><img class="lazy" data-original="images/products/product-placeholder-03.jpg"></div>
+                              <div class="product-img"><img class="lazy" data-src="images/products/product-placeholder-03.jpg"></div>
                               <div class="product-description">
                                   <h3 class="product-title">100ml Blossoming Honeysuckle &amp; White Tea Bath &amp; Shower Gel</h3>
                                   <div class="more-info">
@@ -470,7 +473,7 @@
                           </div><!-- /.product-item -->
 
                           <div data-product-id="KBT019" class="product-item">
-                              <div class="product-img"><img class="lazy" data-original="images/products/product-placeholder-03.jpg"></div>
+                              <div class="product-img"><img class="lazy" data-src="images/products/product-placeholder-03.jpg"></div>
                               <div class="product-description">
                                   <h3 class="product-title">100ml Blossoming Honeysuckle &amp; White Tea Bath &amp; Shower Gel</h3>
                                   <div class="more-info">
@@ -488,7 +491,7 @@
                           </div><!-- /.product-item -->
 
                           <div data-product-id="KBT020" class="product-item">
-                              <div class="product-img"><img class="lazy" data-original="images/products/product-placeholder-03.jpg"></div>
+                              <div class="product-img"><img class="lazy" data-src="images/products/product-placeholder-03.jpg"></div>
                               <div class="product-description">
                                   <h3 class="product-title">100ml Blossoming Honeysuckle &amp; White Tea Bath &amp; Shower Gel</h3>
                                   <div class="more-info">
@@ -506,7 +509,7 @@
                           </div><!-- /.product-item -->
 
                           <div data-product-id="KBT021" class="product-item">
-                              <div class="product-img"><img class="lazy" data-original="images/products/product-placeholder-03.jpg"></div>
+                              <div class="product-img"><img class="lazy" data-src="images/products/product-placeholder-03.jpg"></div>
                               <div class="product-description">
                                   <h3 class="product-title">100ml Blossoming Honeysuckle &amp; White Tea Bath &amp; Shower Gel</h3>
                                   <div class="more-info">
@@ -528,7 +531,7 @@
                       <div class="category-itemlist" id="category-04">
 
                           <div data-product-id="KBT022" class="product-item">
-                              <div class="product-img"><img class="lazy" data-original="images/products/product-placeholder-04.jpg"></div>
+                              <div class="product-img"><img class="lazy" data-src="images/products/product-placeholder-04.jpg"></div>
                               <div class="product-description">
                                   <h3 class="product-title">100ml Blossoming Honeysuckle &amp; White Tea Bath &amp; Shower Gel</h3>
                                   <div class="more-info">
@@ -546,7 +549,7 @@
                           </div><!-- /.product-item -->
 
                           <div data-product-id="KBT023" class="product-item">
-                              <div class="product-img"><img class="lazy" data-original="images/products/product-placeholder-04.jpg"></div>
+                              <div class="product-img"><img class="lazy" data-src="images/products/product-placeholder-04.jpg"></div>
                               <div class="product-description">
                                   <h3 class="product-title">100ml Blossoming Honeysuckle &amp; White Tea Bath &amp; Shower Gel</h3>
                                   <div class="more-info">
@@ -564,7 +567,7 @@
                           </div><!-- /.product-item -->
 
                           <div data-product-id="KBT024" class="product-item">
-                              <div class="product-img"><img class="lazy" data-original="images/products/product-placeholder-04.jpg"></div>
+                              <div class="product-img"><img class="lazy" data-src="images/products/product-placeholder-04.jpg"></div>
                               <div class="product-description">
                                   <h3 class="product-title">100ml Blossoming Honeysuckle &amp; White Tea Bath &amp; Shower Gel</h3>
                                   <div class="more-info">
@@ -582,7 +585,7 @@
                           </div><!-- /.product-item -->
 
                           <div data-product-id="KBT025" class="product-item">
-                              <div class="product-img"><img class="lazy" data-original="images/products/product-placeholder-04.jpg"></div>
+                              <div class="product-img"><img class="lazy" data-src="images/products/product-placeholder-04.jpg"></div>
                               <div class="product-description">
                                   <h3 class="product-title">100ml Blossoming Honeysuckle &amp; White Tea Bath &amp; Shower Gel</h3>
                                   <div class="more-info">
@@ -600,7 +603,7 @@
                           </div><!-- /.product-item -->
 
                           <div data-product-id="KBT026" class="product-item">
-                              <div class="product-img"><img class="lazy" data-original="images/products/product-placeholder-04.jpg"></div>
+                              <div class="product-img"><img class="lazy" data-src="images/products/product-placeholder-04.jpg"></div>
                               <div class="product-description">
                                   <h3 class="product-title">100ml Blossoming Honeysuckle &amp; White Tea Bath &amp; Shower Gel</h3>
                                   <div class="more-info">
@@ -618,7 +621,7 @@
                           </div><!-- /.product-item -->
 
                           <div data-product-id="KBT027" class="product-item">
-                              <div class="product-img"><img class="lazy" data-original="images/products/product-placeholder-04.jpg"></div>
+                              <div class="product-img"><img class="lazy" data-src="images/products/product-placeholder-04.jpg"></div>
                               <div class="product-description">
                                   <h3 class="product-title">100ml Blossoming Honeysuckle &amp; White Tea Bath &amp; Shower Gel</h3>
                                   <div class="more-info">
@@ -636,7 +639,7 @@
                           </div><!-- /.product-item -->
 
                           <div data-product-id="KBT028" class="product-item">
-                              <div class="product-img"><img class="lazy" data-original="images/products/product-placeholder-04.jpg"></div>
+                              <div class="product-img"><img class="lazy" data-src="images/products/product-placeholder-04.jpg"></div>
                               <div class="product-description">
                                   <h3 class="product-title">100ml Blossoming Honeysuckle &amp; White Tea Bath &amp; Shower Gel</h3>
                                   <div class="more-info">
@@ -658,7 +661,7 @@
                       <div class="category-itemlist" id="category-05">
 
                           <div data-product-id="KBT029" class="product-item">
-                              <div class="product-img"><img class="lazy" data-original="images/products/product-placeholder-05.jpg"></div>
+                              <div class="product-img"><img class="lazy" data-src="images/products/product-placeholder-05.jpg"></div>
                               <div class="product-description">
                                   <h3 class="product-title">100ml Blossoming Honeysuckle &amp; White Tea Bath &amp; Shower Gel</h3>
                                   <div class="more-info">
@@ -676,7 +679,7 @@
                           </div><!-- /.product-item -->
 
                           <div data-product-id="KBT030" class="product-item">
-                              <div class="product-img"><img class="lazy" data-original="images/products/product-placeholder-05.jpg"></div>
+                              <div class="product-img"><img class="lazy" data-src="images/products/product-placeholder-05.jpg"></div>
                               <div class="product-description">
                                   <h3 class="product-title">100ml Blossoming Honeysuckle &amp; White Tea Bath &amp; Shower Gel</h3>
                                   <div class="more-info">
@@ -694,7 +697,7 @@
                           </div><!-- /.product-item -->
 
                           <div data-product-id="KBT031" class="product-item">
-                              <div class="product-img"><img class="lazy" data-original="images/products/product-placeholder-05.jpg"></div>
+                              <div class="product-img"><img class="lazy" data-src="images/products/product-placeholder-05.jpg"></div>
                               <div class="product-description">
                                   <h3 class="product-title">100ml Blossoming Honeysuckle &amp; White Tea Bath &amp; Shower Gel</h3>
                                   <div class="more-info">
@@ -712,7 +715,7 @@
                           </div><!-- /.product-item -->
 
                           <div data-product-id="KBT032" class="product-item">
-                              <div class="product-img"><img class="lazy" data-original="images/products/product-placeholder-05.jpg"></div>
+                              <div class="product-img"><img class="lazy" data-src="images/products/product-placeholder-05.jpg"></div>
                               <div class="product-description">
                                   <h3 class="product-title">100ml Blossoming Honeysuckle &amp; White Tea Bath &amp; Shower Gel</h3>
                                   <div class="more-info">
@@ -730,7 +733,7 @@
                           </div><!-- /.product-item -->
 
                           <div data-product-id="KBT033" class="product-item">
-                              <div class="product-img"><img class="lazy" data-original="images/products/product-placeholder-05.jpg"></div>
+                              <div class="product-img"><img class="lazy" data-src="images/products/product-placeholder-05.jpg"></div>
                               <div class="product-description">
                                   <h3 class="product-title">100ml Blossoming Honeysuckle &amp; White Tea Bath &amp; Shower Gel</h3>
                                   <div class="more-info">
@@ -748,7 +751,7 @@
                           </div><!-- /.product-item -->
 
                           <div data-product-id="KBT034"  class="product-item">
-                              <div class="product-img"><img class="lazy" data-original="images/products/product-placeholder-05.jpg"></div>
+                              <div class="product-img"><img class="lazy" data-src="images/products/product-placeholder-05.jpg"></div>
                               <div class="product-description">
                                   <h3 class="product-title">100ml Blossoming Honeysuckle &amp; White Tea Bath &amp; Shower Gel</h3>
                                   <div class="more-info">
@@ -766,7 +769,7 @@
                           </div><!-- /.product-item -->
 
                           <div data-product-id="KBT035" class="product-item">
-                              <div class="product-img"><img class="lazy" data-original="images/products/product-placeholder-05.jpg"></div>
+                              <div class="product-img"><img class="lazy" data-src="images/products/product-placeholder-05.jpg"></div>
                               <div class="product-description">
                                   <h3 class="product-title">100ml Blossoming Honeysuckle &amp; White Tea Bath &amp; Shower Gel</h3>
                                   <div class="more-info">
@@ -788,7 +791,7 @@
                       <div class="category-itemlist" id="category-06">
 
                           <div data-product-id="KBT036" class="product-item">
-                              <div class="product-img"><img class="lazy" data-original="images/products/product-placeholder-06.jpg"></div>
+                              <div class="product-img"><img class="lazy" data-src="images/products/product-placeholder-06.jpg"></div>
                               <div class="product-description">
                                   <h3 class="product-title">100ml Blossoming Honeysuckle &amp; White Tea Bath &amp; Shower Gel</h3>
                                   <div class="more-info">
@@ -806,7 +809,7 @@
                           </div><!-- /.product-item -->
 
                           <div data-product-id="KBT037" class="product-item">
-                              <div class="product-img"><img class="lazy" data-original="images/products/product-placeholder-06.jpg"></div>
+                              <div class="product-img"><img class="lazy" data-src="images/products/product-placeholder-06.jpg"></div>
                               <div class="product-description">
                                   <h3 class="product-title">100ml Blossoming Honeysuckle &amp; White Tea Bath &amp; Shower Gel</h3>
                                   <div class="more-info">
@@ -824,7 +827,7 @@
                           </div><!-- /.product-item -->
 
                           <div data-product-id="KBT038" class="product-item">
-                              <div class="product-img"><img class="lazy" data-original="images/products/product-placeholder-06.jpg"></div>
+                              <div class="product-img"><img class="lazy" data-src="images/products/product-placeholder-06.jpg"></div>
                               <div class="product-description">
                                   <h3 class="product-title">100ml Blossoming Honeysuckle &amp; White Tea Bath &amp; Shower Gel</h3>
                                   <div class="more-info">
@@ -842,7 +845,7 @@
                           </div><!-- /.product-item -->
 
                           <div data-product-id="KBT039" class="product-item">
-                              <div class="product-img"><img class="lazy" data-original="images/products/product-placeholder-06.jpg"></div>
+                              <div class="product-img"><img class="lazy" data-src="images/products/product-placeholder-06.jpg"></div>
                               <div class="product-description">
                                   <h3 class="product-title">100ml Blossoming Honeysuckle &amp; White Tea Bath &amp; Shower Gel</h3>
                                   <div class="more-info">
@@ -860,7 +863,7 @@
                           </div><!-- /.product-item -->
 
                           <div data-product-id="KBT040" class="product-item">
-                              <div class="product-img"><img class="lazy" data-original="images/products/product-placeholder-06.jpg"></div>
+                              <div class="product-img"><img class="lazy" data-src="images/products/product-placeholder-06.jpg"></div>
                               <div class="product-description">
                                   <h3 class="product-title">100ml Blossoming Honeysuckle &amp; White Tea Bath &amp; Shower Gel</h3>
                                   <div class="more-info">
@@ -878,7 +881,7 @@
                           </div><!-- /.product-item -->
 
                           <div data-product-id="KBT041" class="product-item">
-                              <div class="product-img"><img class="lazy" data-original="images/products/product-placeholder-06.jpg"></div>
+                              <div class="product-img"><img class="lazy" data-src="images/products/product-placeholder-06.jpg"></div>
                               <div class="product-description">
                                   <h3 class="product-title">100ml Blossoming Honeysuckle &amp; White Tea Bath &amp; Shower Gel</h3>
                                   <div class="more-info">
@@ -896,7 +899,7 @@
                           </div><!-- /.product-item -->
 
                           <div data-product-id="KBT042" class="product-item">
-                              <div class="product-img"><img class="lazy" data-original="images/products/product-placeholder-06.jpg"></div>
+                              <div class="product-img"><img class="lazy" data-src="images/products/product-placeholder-06.jpg"></div>
                               <div class="product-description">
                                   <h3 class="product-title">100ml Blossoming Honeysuckle &amp; White Tea Bath &amp; Shower Gel</h3>
                                   <div class="more-info">
@@ -916,6 +919,8 @@
                       </div><!-- /.category-itemlist -->
 
                   </div><!-- /.product-list -->
+
+                  <span class="scroll-hint"></span>
 
               </div><!-- /.product-container -->
 

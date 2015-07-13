@@ -2,6 +2,8 @@ $(function(){
 
     // TODO: in final object need to pass through an extra value, product ID as well as SKU & QTY
 
+    // TODO: add flag for when tab page shown to record analytics
+
     // touch detection
 
     function is_touch_device() {
@@ -15,27 +17,53 @@ $(function(){
         $('html').addClass('non-touch');
     }
 
+    // preloader if required
+
+    /*
     $(window).load(function() {
         $("#loader").fadeOut();
         $("#overlay").delay(800).fadeOut("slow");
     });
+    */
 
+    // set up lazy load of product images
 
-    //!! start of app ui scripts !!//
-
-    // lazy load images
-
-    $("img.lazy").lazyload({
-        effect : "fadeIn",
-        container : $(".product-container"),
-        // placeholder : "images/loading-spinner@2x.gif"
-        threshold : 20
+    $.extend($.lazyLoadXT, {
+        scrollContainer: '.product-container',
+        edgeY:  100
     });
 
     // tabs functions
 
     $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
         categoryWaypoint();
+        hintWaypoint();
+        $(window).scrollTop($(window).scrollTop()+1); // fix for lazy load images
+        $(window).scrollTo($($.attr(this, 'href')), 300, { axis:'y' });
+    });
+
+    // product info/details show hide
+
+    $(".more-info-trigger a").click(function(event){
+
+        if( $(this).hasClass("active") ) {
+            $(this).removeClass("active");
+            $(".more-info-content").hide();
+            event.preventDefault();
+        }
+        else {
+            $(".more-info-trigger a").removeClass("active");
+            $(".more-info-content").hide();
+            $(this).addClass("active");
+            $(this).parent().next(".more-info-content").show();
+            event.preventDefault();
+        }
+    });
+
+    // hide remove tooltip if cart exists
+
+    $("#continue").click(function(){
+        $('.remove-tooltip').hide();
     });
 
     // add bag radio button
@@ -44,23 +72,6 @@ $(function(){
         $(".partner-item a").removeClass("selected");
         $(this).addClass("selected");
         event.preventDefault()
-    });
-
-    // product details show hide
-
-    $(".more-info-trigger a").click(function(event){
-
-      if( $(this).hasClass("active") ) {
-        $(this).removeClass("active");
-        $(".more-info-content").hide();
-        event.preventDefault();
-      } else {
-        $(".more-info-trigger a").removeClass("active");
-        $(".more-info-content").hide();
-        $(this).addClass("active");
-        $(this).parent().next(".more-info-content").show();
-        event.preventDefault();
-      }
     });
 
     // product list scroll to function
@@ -94,7 +105,6 @@ $(function(){
     } else {
         $('.no-cart').show();
         $('.existing-cart').hide();
-
     }
 
 });
@@ -126,7 +136,7 @@ function addProductToCart(e, productId) {
     //extract the image
     if (!isCartFull()) {
 
-        //Update the summary dom
+        // Update the summary dom
         updateSummaryWithImage(productImage.attr('src'),  getNextImageId());
 
         //add the product to the cart
@@ -147,6 +157,7 @@ function addProductToCart(e, productId) {
     }
 
     scrollToTop();
+    $('.remove-tooltip').fadeOut();
 
 
 };
@@ -268,7 +279,7 @@ function buildSelectedItems() {
 
     }
 
-    $(".more-info-trigger a").click(function(event){
+    $(".selected-item .more-info-trigger a").click(function(event){
 
         if( $(this).hasClass("active") ) {
             $(this).removeClass("active");
@@ -410,6 +421,19 @@ function areWeAtSix() {
 
 function scrollToTop() {
   $(window).scrollTo($('#step-indicator-bar'), 300, { axis:'y' });
+}
+
+function hintWaypoint() {
+    $('.product-list').waypoint({
+        handler: function(direction) {
+            if (direction === 'right') {
+                $('.scroll-hint').fadeOut(100);
+            }
+        },
+        context: '.product-container',
+        offset: -10,
+        horizontal: true
+    })
 }
 
 // category highlighting function

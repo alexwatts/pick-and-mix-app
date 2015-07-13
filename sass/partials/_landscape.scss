@@ -1,0 +1,20 @@
+//
+// Landscape media
+// --------------------------------------------------
+
+@media all and (orientation:landscape) {
+
+  .progress-box {
+
+    .summary-group-container, .price-container {
+      width: 33.333%;
+    }
+
+    .price {
+      float: right;
+      margin-top: 15px;
+    }
+
+  }
+
+}

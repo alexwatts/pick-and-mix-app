@@ -22,6 +22,7 @@
 
 @import "partials/modals";
 @import "partials/buttons";
+@import "partials/lazyload";
 
 //
 // Containers
@@ -129,6 +130,21 @@ body {
   	-webkit-overflow-scrolling: touch;
 	width: 100%;
 	padding-bottom: 20px;
+  	position: relative;
+}
+
+.scroll-hint {
+  position: absolute;
+  top: 40%;
+  margin-top: -35px;
+  right: 10px;
+  width: 35px;
+  height: 70px;
+  background: url("../images/chevron.svg") no-repeat 0 0;
+  
+  .no-svg & {
+	background-image: url("../images/chevron.png");
+  }
 }
 
 .product-list {
@@ -166,11 +182,11 @@ body {
 	}
 
 	img {
-		// width: 100%;
+		width: 100%;
 		max-width: 400px;
 		min-width: 200px;
-		width: 200px;
-		height: 200px;
+		// width: 200px;
+		// height: 200px;
 	}
 }
 
@@ -538,6 +554,17 @@ a.selected .btn-select {
 	padding: 5px;
 	background-color: #f3f2f2;
 	border-bottom: 1px solid #464646;
+  	position: relative;
+}
+
+.remove-tooltip {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 48%;
+  background-color: rgba(0,0,0,0.65);
+  padding: 10px;
+  color: #fff;
 }
 
 .summary-group-container {
@@ -661,6 +688,8 @@ a.selected .btn-select {
 .continue {
 	float: right;
 }
+
+@import "partials/landscape";
 
 //
 // Typography

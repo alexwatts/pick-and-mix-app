@@ -125,6 +125,22 @@ h4.modal-title {
   display: none;
 }
 
+.out-of-stock {
+  display: block;
+  position: absolute;
+  top: 20%;
+  left: 52%;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #898989;
+  color: #fff;
+  font-size: 11px;
+  text-transform: uppercase;
+  padding-top: 13px;
+  line-height: 1.2;
+}
+
 .btn-secondary {
   color: #fff;
   background-color: #be514f;
@@ -132,6 +148,20 @@ h4.modal-title {
 .btn-secondary:hover, .btn-secondary:focus, .btn-secondary.focus {
   color: #fff;
   text-decoration: none;
+}
+
+img.lazy {
+  display: none;
+}
+
+.lazy-hidden {
+  opacity: 0;
+}
+
+.lazy-loaded {
+  -webkit-transition: opacity 0.3s;
+  transition: opacity 0.3s;
+  opacity: 1;
 }
 
 body {
@@ -205,6 +235,20 @@ body {
   -webkit-overflow-scrolling: touch;
   width: 100%;
   padding-bottom: 20px;
+  position: relative;
+}
+
+.scroll-hint {
+  position: absolute;
+  top: 40%;
+  margin-top: -35px;
+  right: 10px;
+  width: 35px;
+  height: 70px;
+  background: url("../images/chevron.svg") no-repeat 0 0;
+}
+.no-svg .scroll-hint {
+  background-image: url("../images/chevron.png");
 }
 
 .product-list {
@@ -235,10 +279,9 @@ body {
   background: none;
 }
 .product-img img {
+  width: 100%;
   max-width: 400px;
   min-width: 200px;
-  width: 200px;
-  height: 200px;
 }
 
 .product-description {
@@ -554,6 +597,17 @@ a.selected .btn-select:after {
   padding: 5px;
   background-color: #f3f2f2;
   border-bottom: 1px solid #464646;
+  position: relative;
+}
+
+.remove-tooltip {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 48%;
+  background-color: rgba(0, 0, 0, 0.65);
+  padding: 10px;
+  color: #fff;
 }
 
 .summary-group-container {
@@ -668,6 +722,15 @@ a.selected .btn-select:after {
   float: right;
 }
 
+@media all and (orientation: landscape) {
+  .progress-box .summary-group-container, .progress-box .price-container {
+    width: 33.333%;
+  }
+  .progress-box .price {
+    float: right;
+    margin-top: 15px;
+  }
+}
 h1 {
   font-size: 24px;
 }

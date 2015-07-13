@@ -55,6 +55,21 @@
     display: none;
   }
 }
+.out-of-stock {
+  display: block;
+  position: absolute;
+  top: 20%;
+  left: 52%;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #898989;
+  color: #fff;
+  font-size: 11px;
+  text-transform: uppercase;
+  padding-top: 13px;
+  line-height: 1.2;
+}
 .btn-lg {
   
 }
