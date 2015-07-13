@@ -235,6 +235,7 @@ body {
 	padding: 18px 18px 8px 18px;
 	position: absolute;
 	bottom: 36px;
+  	max-height: 216px;
 	z-index: 1;
 
 	&:after {
@@ -260,6 +261,12 @@ body {
 			font-style: italic;
 		}
 	}
+}
+
+.more-info-scroll {
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+  max-height: 190px;
 }
 
 
