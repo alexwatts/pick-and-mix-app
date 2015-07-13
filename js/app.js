@@ -117,7 +117,7 @@ var cart = new Array() // namespace for the cart
 
 var prices = {
     "three" : 23,
-    "six" : 40,
+    "six" : 36,
     "bagPrice" : 10
 };
 
