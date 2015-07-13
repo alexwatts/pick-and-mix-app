@@ -728,7 +728,9 @@ a.selected .btn-select:after {
   }
   .progress-box .price {
     float: right;
+    text-align: right;
     margin-top: 15px;
+    width: 100%;
   }
 }
 h1 {

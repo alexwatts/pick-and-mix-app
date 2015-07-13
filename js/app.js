@@ -38,8 +38,8 @@ $(function(){
     $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
         categoryWaypoint();
         hintWaypoint();
-        $(window).scrollTop($(window).scrollTop()+1); // fix for lazy load images
-        $(window).scrollTo($($.attr(this, 'href')), 300, { axis:'y' });
+        $('.product-container').scrollTo('+=1px', 1, { axis:'x' }); // fix for lazy load images
+        $(window).scrollTo($($(this).attr('href')), 300, { axis:'y' });
     });
 
     // product info/details show hide
