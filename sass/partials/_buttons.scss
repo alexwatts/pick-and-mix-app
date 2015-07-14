@@ -6,6 +6,7 @@
   font-size: em(13);
   text-transform: uppercase;
   border-radius: 0;
+  transition: background-color 0.5s ease;
 
   &.disabled {
     background-color: #d8d7d7;

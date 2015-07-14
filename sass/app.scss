@@ -604,6 +604,12 @@ a.selected .btn-select {
 		position: absolute;
 		left: 50%;
 		transform: translateX(-50%);
+	  	opacity: 0;
+	  	transition: opacity 0.5s ease;
+
+	  	.selected & {
+		  opacity: 1;
+		}
 	}
 
 	.item-2 & {
@@ -652,6 +658,8 @@ a.selected .btn-select {
 	height: 12px;
 	margin: 3px 0;
 	background-color: #898989;
+  	background-position: center 0;
+  	transition: background 0.5s ease;
 
 	.selected & {
 		background: url(../images/tick-white.svg) no-repeat center 0 #9bbb59;
@@ -674,6 +682,7 @@ a.selected .btn-select {
 
 .summary-progress-indicator {
 	background-color: #47a1c5;
+  	transition: background-color 0.5s ease;
 
 	.complete & {
 		background-color: #9bbb59;

@@ -1015,11 +1015,11 @@
 
               <div class="review-box clearfix">
                   <div class="review">
-                      <h4 class="pack-heading">Review and choose an optional travel bag.</h4>
+                      <h4 class="pack-heading">Review and add a bag, if you like.</h4>
                   </div>
                   <div class="selection-container">
                       <div class="selection-title clearfix">
-                          <span>Your Selection</span>
+                          <span>Your Choice</span>
                           <a href="#pick" data-toggle="tab">Edit</a>
                       </div>
                       <div class="selected-item-list clearfix">
@@ -1029,7 +1029,7 @@
               </div><!-- /.review-box -->
 
               <div class="partner-container clearfix">
-                  <h4 class="pack-heading">Partner your selection with a travel bag.</h4>
+                  <!--<h4 class="pack-heading">Partner your selection with a travel bag.</h4>-->
                   
                   <div class="partner-itemlist clearfix">
 
@@ -1037,7 +1037,7 @@
                           <a onclick="handleBagSelect(event,'')" href="#" class="selected">
                               <div class="product-img"><img src="images/products/stowaway-bag-ghost.jpg"></div>
                               <div class="product-description">
-                                  <h3 class="product-title">No Bag</h3>
+                                  <h3 class="product-title">No, thanks.</h3>
                               </div>
                               <div class="select">
                                   <span class="btn-select">Add</span>
@@ -1075,7 +1075,7 @@
 
                   <div class="price-container clearfix">
                       <div class="price total-price">Price: &pound;23</div>
-                      <div class="continue"><a onclick="handleContinue(event)" href="#" class="btn btn-primary">Continue</a></div>
+                      <div class="continue"><a onclick="handleContinue(event)" href="#" class="btn btn-primary">Buy now</a></div>
                   </div>
 
               </div><!-- /.partner-container -->
@@ -1103,12 +1103,11 @@
             <h4 class="modal-title" id="modalContinueLabel">Are you sure?</h4>
           </div>
           <div class="modal-body">
-            <p>It looks like you've already started a Pick &amp; Mix.</p>
-            <p>If you start a new one, your current selection will be lost.</p>
+            <p>It looks like you've already started a Pick &amp; Mix. If you start a new one, your current selection will be lost.</p>
           </div>
           <div class="modal-footer">
-            <a href="#" class="btn btn-default" data-dismiss="modal">No, go back</a>
-            <a onclick='clearCart(event)' href="#pick" data-toggle="tab" data-dismiss="modal" class="btn btn-primary">Yes, start again</a>
+            <a href="#" class="btn btn-default pull-left" data-dismiss="modal">No, go back</a>
+            <a onclick='clearCart(event)' href="#pick" data-toggle="tab" data-dismiss="modal" class="btn btn-primary pull-right">Yes, start a new one</a>
           </div>
         </div>
       </div>
@@ -1126,11 +1125,11 @@
           </div>
           <div class="modal-body">
             <p>Sorry, you have reached your maximum number of products.</p>
-            <p>If you'd like more, complete your current pick &amp; mix and create another.</p>
+            <p>If you want more products, please complete your current Pick &amp; Mix and create another one.</p>
             <p>Alternatively, remove one of the products from your current selection and add this one.</p>
           </div>
           <div class="modal-footer">
-            <a href="#" class="btn btn-close" data-dismiss="modal">Close</a>
+            <a href="#" class="btn btn-primary pull-right" data-dismiss="modal">Got it</a>
           </div>
         </div>
       </div>

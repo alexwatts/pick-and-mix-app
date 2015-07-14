@@ -81,6 +81,8 @@ h4.modal-title {
   font-size: 0.92857em;
   text-transform: uppercase;
   border-radius: 0;
+  -webkit-transition: background-color 0.5s ease;
+          transition: background-color 0.5s ease;
 }
 .btn.disabled {
   background-color: #d8d7d7;
@@ -647,6 +649,12 @@ a.selected .btn-select:after {
   -webkit-transform: translateX(-50%);
       -ms-transform: translateX(-50%);
           transform: translateX(-50%);
+  opacity: 0;
+  -webkit-transition: opacity 0.5s ease;
+          transition: opacity 0.5s ease;
+}
+.selected .summary-item-img img {
+  opacity: 1;
 }
 .item-2 .summary-item-img {
   background-image: url(../images/bottle-2.svg);
@@ -687,6 +695,9 @@ a.selected .btn-select:after {
   height: 12px;
   margin: 3px 0;
   background-color: #898989;
+  background-position: center 0;
+  -webkit-transition: background 0.5s ease;
+          transition: background 0.5s ease;
 }
 .selected .summary-selection-indicator {
   background: url(../images/tick-white.svg) no-repeat center 0 #9bbb59;
@@ -707,6 +718,8 @@ a.selected .btn-select:after {
 
 .summary-progress-indicator {
   background-color: #47a1c5;
+  -webkit-transition: background-color 0.5s ease;
+          transition: background-color 0.5s ease;
 }
 .complete .summary-progress-indicator {
   background-color: #9bbb59;

@@ -48,14 +48,14 @@ $(function(){
 
         if( $(this).hasClass("active") ) {
             $(this).removeClass("active");
-            $(".more-info-content").hide();
+            $(".more-info-content").fadeOut(200);
             event.preventDefault();
         }
         else {
             $(".more-info-trigger a").removeClass("active");
-            $(".more-info-content").hide();
+            $(".more-info-content").fadeOut(200);
             $(this).addClass("active");
-            $(this).parent().next(".more-info-content").show();
+            $(this).parent().next(".more-info-content").fadeIn(300);
             event.preventDefault();
         }
     });
@@ -283,13 +283,13 @@ function buildSelectedItems() {
 
         if( $(this).hasClass("active") ) {
             $(this).removeClass("active");
-            $(".more-info-content").hide();
+            $(".more-info-content").fadeOut(200);
             event.preventDefault();
         } else {
             $(".more-info-trigger a").removeClass("active");
-            $(".more-info-content").hide();
+            $(".more-info-content").fadeOut(200);
             $(this).addClass("active");
-            $(this).parent().next(".more-info-content").show();
+            $(this).parent().next(".more-info-content").fadeIn(300);
             event.preventDefault();
         }
     });
