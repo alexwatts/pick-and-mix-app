@@ -450,11 +450,14 @@ function categoryWaypoint() {
         handler: function(direction) {
           if (direction === 'right') {
             var nav = $('ul.category-list')
+            var windowWidth = $(window).width();
+            var halfWindow =  windowWidth / 2 - 35;
 
             $elements.removeClass('current')
             nav.find('a').removeClass('active')
             $(this.element).addClass('current')
-            nav.find('a[href="#'+$(this.element).attr('id')+'"]').addClass('active')
+            nav.find('a[href="#'+$(this.element).attr('id')+'"]').addClass('active');
+            $('.category-nav').scrollTo($('.category-nav .active'), 300, { axis:'x', offset:-halfWindow });
           }
         },
         offset: 1,
@@ -476,11 +479,14 @@ function categoryWaypoint() {
         handler: function(direction) {
           if (direction === 'left') {
             var nav = $('ul.category-list')
+            var windowWidth = $(window).width();
+            var halfWindow =  windowWidth / 2 - 35;
 
             $elements.removeClass('current')
             nav.find('a').removeClass('active')
             $(this.element).addClass('current')
-            nav.find('a[href="#'+$(this.element).attr('id')+'"]').addClass('active')
+            nav.find('a[href="#'+$(this.element).attr('id')+'"]').addClass('active');
+            $('.category-nav').scrollTo($('.category-nav .active'), 300, { axis:'x', offset:-halfWindow });
           }
         },
         // offset: '-100%',
