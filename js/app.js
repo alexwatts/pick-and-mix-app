@@ -143,7 +143,7 @@ function addProductToCart(e, productId, productSku) {
         //add the product to the cart
         cart.push({
             "productId": productId,
-            "productSku": productSku, // not sure i've done this right
+            "productSku": productSku,
             "src": productImage.attr('src'),
             "title": productTitle[0].innerText
         });
@@ -195,11 +195,13 @@ function handleContinue(e) {
     };
 
     var distinctProductCodes = new Array();
+    var distinctSKUCodes = new Array();
     var productMap = {};
 
     for (i=0; i<cart.length; i++) {
         if (productMap[cart[i].productId] == undefined) {
             distinctProductCodes.push(cart[i].productId);
+            distinctSKUCodes.push(cart[i].productSku);
             productMap[cart[i].productId] = 1;
         } else {
             productMap[cart[i].productId] = productMap[cart[i].productId] + 1;
@@ -210,7 +212,7 @@ function handleContinue(e) {
         dataToSend.products[i] = {
             product: {
                 id: distinctProductCodes[i],
-                // sku: selectedSku,
+                sku: distinctSKUCodes[i],
                 quantity: productMap[distinctProductCodes[i]]
             }
         }
