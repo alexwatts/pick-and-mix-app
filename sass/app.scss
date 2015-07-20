@@ -70,11 +70,11 @@ body {
 	width: 100%;
 	height: 23px;
 	border-bottom: 1px solid #acacac;
-	background-color: #464646;
-	color: #fff;
+	background-color: #fff;
+	color: #ccc;
 
 	a {
-		color: #fff;
+		color: #ccc;
 		text-decoration: none;
 		width: 100%;
 		display: block;
@@ -90,8 +90,8 @@ body {
 		text-align: center;
 
 		&.current {
-			background-color: #fff;
-			color: #464646;
+			background-color: #464646;
+			color: #fff;
 		}
 	}
 
@@ -107,13 +107,13 @@ body {
 			height: 0; 
 			border-top: 11px solid transparent;
 			border-bottom: 11px solid transparent;
-			border-left: 11px solid #464646;
+			border-left: 11px solid #fff;
 			z-index: 1;
 		}
 
 		&.current {
 			&:after {
-				border-left: 11px solid #fff;
+				border-left: 11px solid #464646;
 			}
 		}
 	}

@@ -192,11 +192,11 @@ body {
   width: 100%;
   height: 23px;
   border-bottom: 1px solid #acacac;
-  background-color: #464646;
-  color: #fff;
+  background-color: #fff;
+  color: #ccc;
 }
 .step-indicator a {
-  color: #fff;
+  color: #ccc;
   text-decoration: none;
   width: 100%;
   display: block;
@@ -211,8 +211,8 @@ body {
   text-align: center;
 }
 .step-indicator .step.current {
-  background-color: #fff;
-  color: #464646;
+  background-color: #464646;
+  color: #fff;
 }
 .step-indicator .step-one:after {
   position: absolute;
@@ -224,11 +224,11 @@ body {
   height: 0;
   border-top: 11px solid transparent;
   border-bottom: 11px solid transparent;
-  border-left: 11px solid #464646;
+  border-left: 11px solid #fff;
   z-index: 1;
 }
 .step-indicator .step-one.current:after {
-  border-left: 11px solid #fff;
+  border-left: 11px solid #464646;
 }
 
 .product-container {

@@ -40,6 +40,7 @@ $(function(){
         hintWaypoint();
         $('.product-container').scrollTo('+=1px', 1, { axis:'x' }); // fix for lazy load images
         $(window).scrollTo($($(this).attr('href')), 300, { axis:'y' });
+        console.log($(this).attr('href') + ' tab has been opened');
     });
 
     // product info/details show hide
@@ -122,7 +123,7 @@ var prices = {
 };
 
 //Cart API
-function addProductToCart(e, productId) {
+function addProductToCart(e, productId, productSku) {
 
     e.preventDefault();
 
@@ -142,11 +143,14 @@ function addProductToCart(e, productId) {
         //add the product to the cart
         cart.push({
             "productId": productId,
+            "productSku": productSku, // not sure i've done this right
             "src": productImage.attr('src'),
             "title": productTitle[0].innerText
         });
 
         Cookies.set('pick-mix-cart', cart, {expires: 365});
+
+        // selectedSku = productSku;
 
         fireEventChanges();
 
@@ -173,10 +177,11 @@ function removeProductFromCart(e, removeIndex) {
     fireEventChanges();
 };
 
-function handleBagSelect(e, productId) {
+function handleBagSelect(e, productId, productSku) {
 
     e.preventDefault();
     selectedBag = productId;
+    selectedBagSku = productSku; // not sure i've done this right
     fireEventChanges();
 
 }
@@ -205,6 +210,7 @@ function handleContinue(e) {
         dataToSend.products[i] = {
             product: {
                 id: distinctProductCodes[i],
+                // sku: selectedSku,
                 quantity: productMap[distinctProductCodes[i]]
             }
         }
@@ -214,6 +220,7 @@ function handleContinue(e) {
         dataToSend.products[distinctProductCodes.length] = {
             product: {
                 id: selectedBag,
+                sku: selectedBagSku, // not sure i've done this right
                 quantity: 1
             }
         }
