@@ -100,7 +100,7 @@ h4.modal-title {
 }
 
 .btn-primary {
-  min-width: 140px;
+  min-width: 130px;
   color: #fff;
   background-color: #000;
   border: none;
@@ -248,7 +248,7 @@ body {
   position: absolute;
   top: 40%;
   margin-top: -35px;
-  right: 26%;
+  left: 204px;
   width: 35px;
   height: 70px;
   background: url("../images/chevron.svg") no-repeat 0 0;
