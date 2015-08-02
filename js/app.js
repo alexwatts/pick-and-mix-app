@@ -140,12 +140,14 @@ function addProductToCart(e, productId, productSku) {
         // Update the summary dom
         updateSummaryWithImage(productImage.attr('src'),  getNextImageId());
 
+        var productTitleText = productTitle[0].innerHTML ?  productTitle[0].innerHTML : productTitle[0].textContent;
+
         //add the product to the cart
         cart.push({
             "productId": productId,
             "productSku": productSku,
             "src": productImage.attr('src'),
-            "title": productTitle[0].innerText
+            "title": productTitleText
         });
 
         Cookies.set('pick-mix-cart', cart, {expires: 365});
