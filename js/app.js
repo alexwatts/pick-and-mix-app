@@ -1,9 +1,5 @@
 $(function(){
 
-    // TODO: in final object need to pass through an extra value, product ID as well as SKU & QTY
-
-    // TODO: add flag for when tab page shown to record analytics
-
     // touch detection
 
     function is_touch_device() {
@@ -40,7 +36,7 @@ $(function(){
         hintWaypoint();
         $('.product-container').scrollTo('+=1px', 1, { axis:'x' }); // fix for lazy load images
         $(window).scrollTo($($(this).attr('href')), 300, { axis:'y' });
-        console.log($(this).attr('href') + ' tab has been opened');
+        console.log($(this).attr('href') + ' tab has been opened'); // flag when new tab shown
     });
 
     // product info/details show hide
@@ -127,7 +123,7 @@ function addProductToCart(e, productId, productSku) {
 
     e.preventDefault();
 
-    //find the product div
+    // find the product div
     var productDiv = $('div[data-product-id=' + productId + ']');
     var productImageDiv = productDiv.find('.product-img');
     var productImage = productImageDiv.find('img');
@@ -151,8 +147,6 @@ function addProductToCart(e, productId, productSku) {
         });
 
         Cookies.set('pick-mix-cart', cart, {expires: 365});
-
-        // selectedSku = productSku;
 
         fireEventChanges();
 
@@ -183,7 +177,7 @@ function handleBagSelect(e, productId, productSku) {
 
     e.preventDefault();
     selectedBag = productId;
-    selectedBagSku = productSku; // not sure i've done this right
+    selectedBagSku = productSku;
     fireEventChanges();
 
 }
@@ -224,7 +218,7 @@ function handleContinue(e) {
         dataToSend.products[distinctProductCodes.length] = {
             product: {
                 id: selectedBag,
-                sku: selectedBagSku, // not sure i've done this right
+                sku: selectedBagSku,
                 quantity: 1
             }
         }
