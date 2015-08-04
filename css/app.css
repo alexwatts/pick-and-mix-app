@@ -615,12 +615,16 @@ a.selected .btn-select:after {
 
 .remove-tooltip {
   position: absolute;
-  top: 0;
-  left: 0;
-  margin: 5px 8px 0 5px;
-  background-color: rgba(0, 0, 0, 0.65);
-  padding: 10px;
+  top: 10px;
+  left: 10px;
+  right: 13px;
+  height: 71px;
+  background: url(../images/info-icon.svg) no-repeat 10px 14px rgba(0, 0, 0, 0.65);
+  padding: 18px 10px 10px 42px;
   color: #fff;
+}
+.no-svg .remove-tooltip {
+  background-image: url(../images/info-icon.png);
 }
 
 .summary-group-container {
@@ -757,6 +761,11 @@ a.selected .btn-select:after {
     text-align: right;
     margin: 16px 0 5px 0;
     width: 100%;
+  }
+
+  .remove-tooltip {
+    right: auto;
+    width: 63.666%;
   }
 }
 h1 {
