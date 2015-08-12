@@ -1,5 +1,5 @@
 //
-// Dummy header/footer set up
+// !!! Dummy header/footer set up - this should be removed from production build !!!
 // --------------------------------------------------
 
 .header, .footer {
@@ -163,11 +163,7 @@ body {
 	text-align: center;
 	white-space: normal;
 	position: relative;
-
-	// width: 70%; // temporary
-
-	width: 200px; // temporary
-
+	width: 200px;
 }
 
 .product-img {
@@ -175,7 +171,6 @@ body {
 	min-height: 200px;
 	background: url(../images/loading-spinner@2x.gif) no-repeat center center;
 	background-size: 20px 20px;
-	// loading-spinner@2x.gif
 
 	.partner-item & {
 		min-height: 100px;
@@ -201,7 +196,6 @@ body {
 }
 
 .more-info {
-	// display: none; // needs work
 	position: relative;
 }
 
@@ -229,8 +223,7 @@ body {
 }
 
 .more-info-content {
-	display: none; // need to add animation
-
+	display: none;
 	background-color: rgba(235,233,233,0.95);
 	padding: 18px 18px 8px 18px;
 	position: absolute;
@@ -281,9 +274,6 @@ body {
 	bottom: 0;
 	background-color: #fff;
 	border-bottom: 1px solid #ccc;
-	// border-top: 1px solid #464646;
-	// z-index: 1000;
-	// position: fixed;
 }
 
 .category-nav {
@@ -313,11 +303,9 @@ ul.category-list {
 	}
 
 	li {
-		// float: left;
 		display: inline-block;
 		margin: 0 8px;
 		text-align: center;
-		// min-width: 80px;
 
 		a {
 			width: auto;

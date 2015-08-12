@@ -2,23 +2,17 @@
 // Modals
 // --------------------------------------------------
 
-// Shell div to position the modal with bottom padding
 .modal-dialog {
-  // position: relative;
   width: 300px;
   margin: 50px auto;
 }
 
 .modal-content {
-  // position: relative;
   background-color: #fff;
   background-color: rgba(255,255,255,.95);
   border: none;
   border-radius: 0;
   box-shadow: none;
-  // background-clip: padding-box;
-  // Remove focus outline from opened modal
-  // outline: 0;
 }
 
 // Modal background
@@ -29,10 +23,11 @@
   right: 0;
   left: 0;
   background-color: #000;
-  // Fade for backdrop
-  // &.fade { @include opacity(0); }
-  &.in { opacity: 0.65; }
   z-index: 2;
+
+  &.in {
+    opacity: 0.65;
+  }
 }
 
 .modal-header {
@@ -56,9 +51,7 @@ h4.modal-title {
 // Footer (for actions)
 .modal-footer {
   padding: 15px;
-  // text-align: right; // right align buttons
   border-top: none;
-  // @include clearfix; // clear it in case folks use .pull-* classes on buttons
 
   .btn-close {
     min-width: 0;

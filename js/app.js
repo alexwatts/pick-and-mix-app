@@ -13,15 +13,6 @@ $(function(){
         $('html').addClass('non-touch');
     }
 
-    // preloader if required
-
-    /*
-    $(window).load(function() {
-        $("#loader").fadeOut();
-        $("#overlay").delay(800).fadeOut("slow");
-    });
-    */
-
     // set up lazy load of product images
 
     $.extend($.lazyLoadXT, {
